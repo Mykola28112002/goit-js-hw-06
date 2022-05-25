@@ -12,3 +12,57 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+// Напиши скрипт для створення галереї зображень на підставі масиву даних.
+//  HTML містить список ul.gallery.
+
+// <ul class="gallery"></ul>
+// Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>.
+//  Для створення розмітки використовуй шаблонні рядки і метод insertAdjacentHTML().
+
+// Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
+// Додай мінімальне оформлення галереї флексбоксами або грідами через CSS класи.
+// const ulCategories = document.querySelector(".gallery");
+
+// const imgOpshuns = options => {
+//   return options.map(options => {
+//     const galleryli = document.createElement('li')
+
+//     const galleryImg = document.createElement('img')
+//     galleryImg.alt = options.alt;
+//     galleryImg.src = options.url;
+//     galleryImg.width = 200;
+    
+//     galleryli.appendChild(galleryImg)
+//     console.log(galleryli)
+    
+//     return galleryli;
+//   })
+  
+// }
+// const elements = imgOpshuns(images)
+
+// ulCategories.append(...elements)
+// ulCategories.insertAdjacentHTML('beforeBegin', galleryli);
+
+
+// Напиши скрипт для створення галереї зображень на підставі масиву даних.
+//  HTML містить список ul.gallery.
+
+// <ul class="gallery"></ul>
+// Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>.
+//  Для створення розмітки використовуй шаблонні рядки і метод insertAdjacentHTML().
+
+// Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
+// Додай мінімальне оформлення галереї флексбоксами або грідами через CSS класи.
+let ulCategories = document.querySelector(".gallery");
+
+const markup = images
+  .map((technology) => 
+  `<li>
+      <img  src = ${technology.url} width = 200; alt = '${technology.alt}' ></img>
+  </li>`)
+  .join("");
+
+ulCategories.insertAdjacentHTML("beforeend", markup);
+// ${technology}
+
