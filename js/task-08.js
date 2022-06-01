@@ -1,28 +1,27 @@
-const sumbitForm = document.querySelector('.login-form');
+const sumbitForm = document.querySelector('form.login-form');
 const emailFiend = document.querySelector('input[type="email"]');
 const passwordFiend = document.querySelector('input[type="password"]');
 
-sumbitForm.addEventListener('sumbit', onFormSumbit);
+
     
 let user = {
     email: "",
     password: "",
 }
+
+sumbitForm.addEventListener('submit', onFormSumbit);
+
 function onFormSumbit(event) {
     event.preventDefault();
-
-    const formData = new FormData(event.currentTurget);
+    const {elements: { email, password }} = event.currentTarget;
     
     if (emailFiend.value === "" || passwordFiend.value === "") {
-        return console.log("All fields must be filled");
+        alert("All fields must be filled");
     }
     else {
-        user.email = emailFiend.value;
-        user.password = passwordFiend.value;
+        user.email = email.value;
+        user.password = password.value;
     }
-
-    event.currentTurget.reset()
-
     console.log(user)
+    event.currentTarget.reset()
 }
-
