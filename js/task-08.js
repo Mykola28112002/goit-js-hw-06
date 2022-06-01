@@ -10,6 +10,8 @@ let user = {
 }
 function onFormSumbit(event) {
     event.preventDefault();
+
+    const formData = new FormData(event.currentTurget);
     
     if (emailFiend.value === '' || passwordFiend.value === '') {
         return console.log("All fields must be filled");
