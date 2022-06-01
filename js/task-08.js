@@ -13,7 +13,7 @@ function onFormSumbit(event) {
 
     const formData = new FormData(event.currentTurget);
     
-    if (emailFiend.value === '' || passwordFiend.value === '') {
+    if (emailFiend.value === "" || passwordFiend.value === "") {
         return console.log("All fields must be filled");
     }
     else {
